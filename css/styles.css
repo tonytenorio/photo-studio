@@ -1,0 +1,80 @@
+/*------------------------------
+1. TIPOGRAFIA DEL SITIO
+--------------------------------*/
+html {
+    font-size: 13px; 
+}
+  
+body {
+    font-family: 'Rubik', sans-serif;
+    color: #696969; 
+}
+
+/*---------------------------------------------
+8. ESTILOS PRESENTACIÓN "#presentacion"
+----------------------------------------------*/
+#header {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+  
+.hero {
+    flex-grow: 1; 
+}
+  
+/*ESTILOS PARA INTERNET EXPLORER 11+*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body {
+      display: flex;
+      flex-direction: column; 
+    }
+  
+    .navbar {
+      min-height: 1px; 
+    } 
+}
+
+/*---------------------------------------------
+9. ESTILOS BIENVENIDOS ".bienvenidos"
+----------------------------------------------*/
+.hero {
+    background: url("../img/header-img.jpeg") no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center; 
+}
+  
+.hero:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.41);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+}
+
+/*--------------------------------------------
+12. EMPIEZAN LAS MEDIAS QUERIES
+----------------------------------------------*/
+@media (min-width: 768px) {  
+    .hero {
+      text-align: right; 
+    }
+}
+  
+@media (min-width: 990px) {
+    html {
+      font-size: 16px; 
+    } 
+}
+
+@media (max-width: 575px) {
+    h1.display-4 {
+      font-size: 2.5rem !important; 
+    } 
+}
