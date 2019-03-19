@@ -11,12 +11,13 @@ body {
 }
 
 /*---------------------------------------------
-8. ESTILOS PRESENTACIÓN "#presentacion"
+2. ESTILOS PRESENTACIÓN "#presentacion"
 ----------------------------------------------*/
 #header {
     display: flex;
     flex-direction: column;
     min-height: 100vh; 
+    background: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .5)), url(../img/header-img.jpeg) no-repeat center center /cover;
 }
   
 .hero {
@@ -36,10 +37,50 @@ body {
 }
 
 /*---------------------------------------------
-9. ESTILOS BIENVENIDOS ".bienvenidos"
+3. ESTILOS PRESENTACIÓN ".navbar"
+----------------------------------------------*/
+.nav-menu {
+    background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .5));
+    padding: 30px;
+}
+
+.menu-item {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #eee;
+}
+  
+.menu-item:hover {
+    color: #70aed2;
+}
+
+.active {
+    color: #70aed2;
+}
+
+.line1, .line2, .line3 {
+    width: 23px;
+    height: 3px;
+    margin: 5px;
+    transition: all .4s;
+}
+  
+.change .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.change .line2 {
+    opacity: 0;
+}
+
+.change .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/*---------------------------------------------
+4. ESTILOS BIENVENIDOS ".bienvenidos"
 ----------------------------------------------*/
 .hero {
-    background: url("../img/header-img.jpeg") no-repeat center center/cover;
     position: relative;
     display: flex;
     justify-content: center;
@@ -48,15 +89,31 @@ body {
     text-align: center; 
 }
   
-.hero:before {
-    content: "";
-    background: rgba(0, 0, 0, 0.41);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0; 
+.hero h1 {
+    animation-name: anim;
+    animation-duration: 2s;
 }
+
+.hero p {
+    animation-name: anim;
+    animation-duration: 2s;
+    animation-delay: .5s;
+    animation-fill-mode: backwards;
+}
+
+/*ANIMACIONES*/
+
+@keyframes anim {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 
 /*--------------------------------------------
 12. EMPIEZAN LAS MEDIAS QUERIES
