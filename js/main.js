@@ -17,5 +17,7 @@ $(document).ready(function() {
       $('.gallery-list-item').click(function() {
         $(this).addClass('active-item').siblings().removeClass('active-item');
     });
+
+    $('#year').text(new Date().getFullYear());
    
 });
