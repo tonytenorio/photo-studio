@@ -1,48 +1,42 @@
-$(document).ready(function() {
+document.querySelectorAll('.navbar .nav-link').forEach(enlace => {
+  enlace.addEventListener('click', function (e) {
+      e.preventDefault();
 
-    $('.nav-button').click(function() {
-        $('.nav-button').toggleClass('change');
-    });
-
-    $(window).scroll(function() {
-      let position = $(this).scrollTop();
-
-      if(position >=350) {
-        $('.mission-text').addClass('fromLeft');
-        $('.camera-img').addClass('fromRight');
-      } else {
-        $('.mission-text').removeClass('fromLeft');
-        $('.camera-img').removeClass('fromRight');
-      }
-    });
-
-    $('.gallery-list-item').click(function() {
-        let value = $(this).attr('data-filter');
-        if(value === 'all') {
-          $('.filter').show(300);
-        } else {
-          $('.filter').not('.' + value).hide(300);
-          $('.filter').filter('.' + value).show(300);
-        }
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
       });
-    
-      $('.gallery-list-item').click(function() {
-        $(this).addClass('active-item').siblings().removeClass('active-item');
-    });
+  });
+});
 
-    $(window).scroll(function() {
-      let position = $(this).scrollTop();
-      if(position >= 4300) {
-        $('.card-1').addClass('moveFromLeft');
-        $('.card-2').addClass('moveFromBottom');
-        $('.card-3').addClass('moveFromRight');
-      } else {
-        $('.card-1').removeClass('moveFromLeft');
-        $('.card-2').removeClass('moveFromBottom');
-        $('.card-3').removeClass('moveFromRight');
-      }
-    });
+$(document).ready(function(){
+  $('.nav-button').click(function() {
+    $('.nav-button').toggleClass('change');
+  });
 
-    $('#year').text(new Date().getFullYear());
-   
+  $(window).scroll(function() {
+    let position = $(this).scrollTop();
+    if(position >= 200) {
+      $('.nav-menu').addClass('custom-navbar');
+    } else {
+      $('.nav-menu').removeClass('custom-navbar');
+    }
+  });
+
+  $('.gallery-list-item').click(function() {
+    let value = $(this).attr('data-filter');
+    if(value === 'all') {
+      $('.filter').show(300);
+    } else {
+      $('.filter').not('.' + value).hide(300);
+      $('.filter').filter('.' + value).show(300);
+    }
+  });
+
+  $('.gallery-list-item').click(function() {
+    $(this).addClass('active-item').siblings().removeClass('active-item');
+  });
+
+  $('#year').text(new Date().getFullYear());
+
 });
