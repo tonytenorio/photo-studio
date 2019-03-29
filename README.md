@@ -1,4 +1,4 @@
-# Photo Studio WEb site
+# Photo Studio Web site
 
 A  modern looking responsive website made with HTML5, CSS3, Bootstrap 4, jQuery 3.2.1.
 
